@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +9,7 @@
   <style>
     /* Estilos personalizados para el tema Talavera */
     .talavera-bg {
-      background-image: 
+      background-image:
         radial-gradient(circle at 10% 20%, #0d47a1 1.5%, transparent 2%),
         radial-gradient(circle at 90% 80%, #b71c1c 1.5%, transparent 2%),
         radial-gradient(circle at 10% 80%, #ffeb3b 1.5%, transparent 2%),
@@ -16,27 +17,26 @@
         linear-gradient(to bottom, #f8f8f8, #e0e0e0);
       background-size: 200% 200%;
     }
-    
+
     .talavera-border {
       border: 12px solid transparent;
-      border-image: 
-        linear-gradient(135deg, 
-          #0d47a1 15%, 
-          #b71c1c 15% 30%, 
-          #ffeb3b 30% 45%, 
+      border-image:
+        linear-gradient(135deg,
+          #0d47a1 15%,
+          #b71c1c 15% 30%,
+          #ffeb3b 30% 45%,
           #4caf50 45% 60%,
           #0d47a1 60% 75%,
           #b71c1c 75% 90%,
-          #ffeb3b 90%
-        ) 1;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+          #ffeb3b 90%) 1;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
-    
+
     .talavera-pattern {
       position: relative;
       overflow: hidden;
     }
-    
+
     .talavera-pattern::before {
       content: "";
       position: absolute;
@@ -49,15 +49,15 @@
       opacity: 0.15;
       z-index: 0;
     }
-    
+
     .talavera-title {
       font-family: 'Times New Roman', serif;
       color: #333;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       position: relative;
       display: inline-block;
     }
-    
+
     .talavera-title::after {
       content: "";
       position: absolute;
@@ -67,7 +67,7 @@
       height: 3px;
       background: linear-gradient(90deg, #0d47a1, #b71c1c, #ffeb3b, #4caf50);
     }
-    
+
     .talavera-flower {
       width: 60px;
       height: 60px;
@@ -77,7 +77,7 @@
       position: absolute;
       opacity: 0.8;
     }
-    
+
     .talavera-btn {
       background: linear-gradient(135deg, #0d47a1, #4a148c);
       color: white;
@@ -86,12 +86,12 @@
       overflow: hidden;
       transition: all 0.3s;
     }
-    
+
     .talavera-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    
+
     .talavera-btn::before {
       content: "";
       position: absolute;
@@ -104,65 +104,74 @@
       animation: rotate 20s linear infinite;
       opacity: 0.5;
     }
-    
+
     @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
+
 <body class="talavera-bg font-serif">
 
   <!-- Decoraciones flotantes -->
   <div class="talavera-flower hidden md:block" style="top: 10%; left: 5%; transform: rotate(20deg);"></div>
-  <div class="talavera-flower hidden md:block" style="top: 15%; right: 8%; transform: rotate(-15deg); background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%230d47a1\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffeb3b\"/></svg>');"></div>
+  <!-- <div class="talavera-flower hidden md:block" style="top: 15%; right: 8%; transform: rotate(-15deg); background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%230d47a1\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffeb3b\"/></svg>');"></div>
   <div class="talavera-flower hidden md:block" style="bottom: 10%; left: 10%; transform: rotate(45deg); background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%234caf50\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23b71c1c\"/></svg>');"></div>
-
+ -->
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-16 relative overflow-hidden">
+  <section
+    class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-16 relative overflow-hidden">
     <!-- Aside estilo Talavera -->
-    <aside class="talavera-border talavera-pattern w-full md:w-1/3 p-8 m-4 bg-white relative z-10 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+    <aside
+      class="talavera-border talavera-pattern w-full md:w-1/3 p-8 m-4 bg-white relative z-10 transform rotate-1 hover:rotate-0 transition-transform duration-500">
       <div class="relative z-10">
-        <h2 class="text-xl md:text-2xl font-bold mb-6 text-center talavera-title">COS LA RENDICION DE DIOS Y LA PREFERENCA DE MIS PARAS</h2>
-        
+        <h2 class="text-xl md:text-2xl font-bold mb-6 text-center talavera-title">COS LA RENDICION DE DIOS Y LA
+          PREFERENCA DE MIS PARAS</h2>
+
         <div class="mb-6 text-center">
           <p class="text-2xl md:text-3xl font-bold" style="color: #0d47a1;">Michel Rodgers Costa</p>
           <p class="text-xl mb-2">&</p>
           <p class="text-2xl md:text-3xl font-bold" style="color: #b71c1c;">Corona Barros Zamada</p>
         </div>
-        
+
         <div class="mb-6">
           <h3 class="font-bold text-lg text-center" style="color: #4a148c;">MIS PADRINOS:</h3>
           <p class="text-center">Minama Celso, Jorge Rhodes &</p>
           <p class="text-center">Ali Maui Gomez Passos</p>
         </div>
-        
+
         <p class="mb-6 italic text-center">ACOMPAÑANOS A CELEBRAR EL PRONTO</p>
-        
+
         <div class="text-3xl font-bold mb-6 text-center" style="color: #b71c1c;">
           <p>29 | JUNIO | 2024</p>
         </div>
-        
+
         <div class="mb-4">
           <p class="font-bold text-center">MISA IGLESIA</p>
           <p class="text-center">Templo de San Isidro Labrador</p>
           <p class="text-center">CEREMONIA RELIGIOSA OPCIONAL</p>
         </div>
-        
+
         <div class="my-6 text-center">
           <p class="font-bold">¿CÓMO LLEGAR?</p>
         </div>
-        
+
         <div class="mb-4">
           <p class="font-bold text-center">RECEPCIÓN 2 PM</p>
           <p class="text-center">EL PRADO del Tor Redferno</p>
           <p class="text-center">CON ENTRADA EL CORAZÓN DE DEDICAR</p>
         </div>
-        
+
         <div class="my-4 text-center">
           <p class="font-bold">¿CÓMO LLEGAR?</p>
         </div>
-        
+
         <div class="mt-6 text-center">
           <p class="font-bold text-xl" style="color: #4a148c;">GO GUERRA NI JALISCO 2024</p>
         </div>
@@ -173,17 +182,19 @@
     <div class="w-full md:w-2/3 text-center p-8 relative z-10">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 talavera-title">Boda de Michel y Zamada</h1>
       <p class="text-2xl md:text-3xl mb-8" style="color: #b71c1c;">29 de Junio, 2024</p>
-      
+
       <div class="flex justify-center mb-8">
         <div class="relative">
-          <img src="https://via.placeholder.com/300" alt="Foto de los novios" class="rounded-full w-48 h-48 md:w-64 md:h-64 border-8" style="border-color: #0d47a1;">
-          <div class="absolute -top-4 -right-4 talavera-flower" style="width: 40px; height: 40px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%23ffeb3b\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23b71c1c\"/></svg>');"></div>
-          <div class="absolute -bottom-4 -left-4 talavera-flower" style="width: 40px; height: 40px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%234caf50\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%230d47a1\"/></svg>');"></div>
+          <img src="https://via.placeholder.com/300" alt="Foto de los novios"
+            class="rounded-full w-48 h-48 md:w-64 md:h-64 border-8" style="border-color: #0d47a1;">
+          <!-- <div class="absolute -top-4 -right-4 talavera-flower" style="width: 40px; height: 40px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%23ffeb3b\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23b71c1c\"/></svg>');"></div>
+          <div class="absolute -bottom-4 -left-4 talavera-flower" style="width: 40px; height: 40px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%234caf50\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%230d47a1\"/></svg>');"></div> -->
         </div>
       </div>
-      
-      <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto">¡Estamos emocionados de compartir este día tan especial con ustedes!</p>
-      
+
+      <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto">¡Estamos emocionados de compartir este día tan especial con
+        ustedes!</p>
+
       <a href="#rsvp" class="talavera-btn px-8 py-3 rounded-full font-semibold text-lg inline-block">
         Confirmar Asistencia
       </a>
@@ -194,7 +205,7 @@
   <section id="info" class="py-16 px-6 max-w-6xl mx-auto bg-white talavera-border relative talavera-pattern">
     <div class="relative z-10">
       <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center talavera-title">Detalles del Evento</h2>
-      
+
       <div class="grid md:grid-cols-2 gap-8">
         <div class="p-6 rounded-lg" style="background-color: rgba(13, 71, 161, 0.1);">
           <h3 class="text-xl font-bold mb-4 text-center" style="color: #0d47a1;">Ceremonia Religiosa</h3>
@@ -205,14 +216,19 @@
             <div class="talavera-flower" style="width: 30px; height: 30px;"></div>
           </div>
         </div>
-        
+
         <div class="p-6 rounded-lg" style="background-color: rgba(183, 28, 28, 0.1);">
           <h3 class="text-xl font-bold mb-4 text-center" style="color: #b71c1c;">Recepción</h3>
           <p class="mb-2"><span class="font-semibold">Lugar:</span> EL PRADO del Tor Redferno</p>
           <p class="mb-2"><span class="font-semibold">Hora:</span> 2:00 PM</p>
           <p class="mb-2"><span class="font-semibold">Dirección:</span> Camino Real #456, Jardines</p>
           <div class="flex justify-center mt-4">
-            <div class="talavera-flower" style="width: 30px; height: 30px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%230d47a1\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffeb3b\"/></svg>');"></div>
+            <!-- <div class="talavera-flower"
+              style="width: 30px; height: 30px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"
+              http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\">
+              <path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%230d47a1\" />
+              <circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffeb3b\" /></svg>');">
+            </div> -->
           </div>
         </div>
       </div>
@@ -225,28 +241,29 @@
       <div class="relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center talavera-title">Confirma tu asistencia</h2>
         <div class="bg-gray-50 p-4 rounded">
-          <iframe src="https://docs.google.com/forms/d/e/xxxxx/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/xxxxx/viewform?embedded=true" width="100%" height="600"
+            frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 px-6 text-center" style="background-color: #0d47a1; color: white;">
+  <footer class="py-8 px-6 text-center">
     <p class="mb-2">© 2024 Boda de Michel y Zamada - Todos los derechos reservados</p>
     <div class="flex justify-center space-x-4">
-      <div class="talavera-flower" style="width: 20px; height: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%23ffeb3b\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffffff\"/></svg>');"></div>
+      <!-- <div class="talavera-flower" style="width: 20px; height: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%23ffeb3b\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffffff\"/></svg>');"></div>
       <div class="talavera-flower" style="width: 20px; height: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%234caf50\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffffff\"/></svg>');"></div>
-      <div class="talavera-flower" style="width: 20px; height: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%23b71c1c\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffffff\"/></svg>');"></div>
+      <div class="talavera-flower" style="width: 20px; height: 20px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10\" fill=\"%23b71c1c\"/><circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"%23ffffff\"/></svg>');"></div> -->
     </div>
   </footer>
 
   <script>
     // Efectos de scroll y animaciones
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
@@ -259,12 +276,12 @@
       });
 
       // Animación de elementos al hacer scroll
-      const animateOnScroll = function() {
+      const animateOnScroll = function () {
         const elements = document.querySelectorAll('section, aside, h1, h2, h3, p, img');
         elements.forEach(el => {
           const elementTop = el.getBoundingClientRect().top;
           const windowHeight = window.innerHeight;
-          
+
           if (elementTop < windowHeight * 0.85) {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
@@ -286,4 +303,9 @@
     });
   </script>
 </body>
+
 </html>
+<!--
+  Este código HTML crea una página web para la boda de Michel y Zamada con un estilo inspirado en Talavera.
+  Incluye secciones para detalles del evento, RSVP y un pie de página.
+  Utiliza Tailwind CSS para el diseño y efectos personalizados para el tema Talavera.
