@@ -3,10 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boda de Tania y Ándres</title>
+  <title>Boda de Michel y Zamada - Estilo Talavera</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Estilos personalizados para el tema Talavera */
+    .talavera-bg {
+      background-image: 
+        radial-gradient(circle at 10% 20%, #0d47a1 1.5%, transparent 2%),
+        radial-gradient(circle at 90% 80%, #b71c1c 1.5%, transparent 2%),
+        radial-gradient(circle at 10% 80%, #ffeb3b 1.5%, transparent 2%),
+        radial-gradient(circle at 90% 20%, #4caf50 1.5%, transparent 2%),
+        linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+      background-size: 200% 200%;
+    }
     
+    .talavera-border {
+      border: 12px solid transparent;
+      border-image: 
+        linear-gradient(135deg, 
+          #0d47a1 15%, 
+          #b71c1c 15% 30%, 
+          #ffeb3b 30% 45%, 
+          #4caf50 45% 60%,
+          #0d47a1 60% 75%,
+          #b71c1c 75% 90%,
+          #ffeb3b 90%
+        ) 1;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .talavera-pattern {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .talavera-pattern::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="20" cy="20" r="3" fill="%230d47a1"/><circle cx="50" cy="50" r="3" fill="%23b71c1c"/><circle cx="80" cy="20" r="3" fill="%23ffeb3b"/><circle cx="20" cy="80" r="3" fill="%234caf50"/><circle cx="80" cy="80" r="3" fill="%230d47a1"/></svg>');
+      background-size: 100px 100px;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    .talavera-title {
+      font-family: 'Times New Roman', serif;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .talavera-title::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0d47a1, #b71c1c, #ffeb3b, #4caf50);
+    }
+    
+    .talavera-flower {
+      width: 60px;
+      height: 60px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q60 30 80 30 Q60 50 50 70 Q40 50 20 30 Q40 30 50 10" fill="%23b71c1c"/><circle cx="50" cy="50" r="10" fill="%23ffeb3b"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      opacity: 0.8;
+    }
+    
+    .talavera-btn {
+      background: linear-gradient(135deg, #0d47a1, #4a148c);
+      color: white;
+      border: 3px solid #ffeb3b;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    
+    .talavera-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .talavera-btn::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px dashed #ffeb3b;
+      border-radius: 9999px;
+      animation: rotate 20s linear infinite;
+      opacity: 0.5;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body class="talavera-bg font-serif">
@@ -140,7 +242,48 @@
   </footer>
 
   <script>
-   
+    // Efectos de scroll y animaciones
+    document.addEventListener('DOMContentLoaded', function() {
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Animación de elementos al hacer scroll
+      const animateOnScroll = function() {
+        const elements = document.querySelectorAll('section, aside, h1, h2, h3, p, img');
+        elements.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight * 0.85) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // Configuración inicial para animaciones
+      const animatable = document.querySelectorAll('section, aside, h1, h2, h3, p, img');
+      animatable.forEach(el => {
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+      });
+
+      // Ejecutar al cargar y al hacer scroll
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    });
   </script>
 </body>
 </html>
