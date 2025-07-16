@@ -6,60 +6,63 @@
   <title>Boda Tania & Andrés</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Montserrat', sans-serif;
-      background: url('talavera2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #002f5f;
       display: flex;
       height: 100vh;
       overflow: hidden;
+      color: #002f5f;
+    }
+
+    aside {
+      width: 80px;
+      background-image: url('talavera1.jpg'); /* Imagen 2: ornamental */
+      background-repeat: repeat-y;
+      background-size: cover;
+      flex-shrink: 0;
+      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
     }
 
     main {
       flex: 1;
       padding: 4rem;
-      backdrop-filter: blur(8px);
-      background-color: rgba(255, 255, 255, 0.8);
+      background: url('talavera2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(6px);
+      background-color: rgba(255, 255, 255, 0.85);
+      overflow-y: auto;
       transition: all 0.5s ease;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: #002f5f;
-      margin-bottom: 0.5rem;
-      animation: fadeIn 2s ease;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     h2 {
       font-weight: 300;
-      font-size: 1.5rem;
-      margin-top: 0;
-      animation: fadeIn 2.5s ease;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    aside {
-      width: 300px;
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-left: 4px solid #002f5f;
-      background-image: url('talavera3.jpg');
-      background-size: cover;
-      background-blend-mode: lighten;
-      transition: all 0.5s ease;
-      box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-    }
-
-    .contenido-aside {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 1rem;
-      border-radius: 12px;
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: fadeIn 2.5s ease-in-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -70,26 +73,23 @@
 
       aside {
         width: 100%;
-        border-left: none;
-        border-top: 4px solid #002f5f;
+        height: 60px;
+        background-repeat: repeat-x;
+        background-size: contain;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
     }
   </style>
 </head>
 <body>
+  <aside></aside>
+
   <main>
     <h1>Boda Tania & Andrés</h1>
     <h2>3 de enero de 2026</h2>
-    <p>Nos complace invitarte a celebrar el inicio de esta nueva aventura juntos.</p>
-    <p>Será un día inolvidable lleno de amor, alegría y hermosos momentos.</p>
+    <p>Con mucha alegría, queremos invitarte a compartir este momento tan especial con nosotros.</p>
+    <p>Será una celebración llena de amor, magia y recuerdos inolvidables. ¡Te esperamos con emoción!</p>
   </main>
-
-  <aside>
-    <div class="contenido-aside">
-      <h3>¡Estás invitado!</h3>
-      <p>Te esperamos con los brazos abiertos para compartir este día tan especial.</p>
-      <p>Más detalles próximamente en este sitio.</p>
-    </div>
-  </aside>
 </body>
 </html>
+
