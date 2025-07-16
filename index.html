@@ -15,18 +15,85 @@
     body {
       font-family: 'Montserrat', sans-serif;
       display: flex;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
       color: #002f5f;
+      background-color: #f9f5f0;
     }
 
     aside {
-      width: 80px;
-      background-image: url('talavera1.jpg'); /* Imagen 2: ornamental */
-      background-repeat: repeat-y;
-      background-size: cover;
+      width: 200px;
+      background-color: #fff;
       flex-shrink: 0;
       box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #e0d6cc;
+      position: relative;
+      z-index: 10;
+    }
+
+    .couple-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 2rem;
+      border: 5px solid #e0d6cc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .countdown {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .countdown-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #002f5f;
+    }
+
+    .countdown-timer {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #b76e79;
+    }
+
+    .rsvp-button {
+      background-color: #b76e79;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .rsvp-button:hover {
+      background-color: #9d5c66;
+      transform: translateY(-2px);
+    }
+
+    .decoration {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url('https://i.pinimg.com/originals/3d/0d/8e/3d0d8e5c5b5f5b5f5b5f5b5f5b5f5b5f.jpg');
+      background-repeat: repeat-y;
+      background-size: contain;
+      opacity: 0.1;
+      z-index: -1;
     }
 
     main {
@@ -45,6 +112,7 @@
       font-size: 3.5rem;
       margin-bottom: 1rem;
       animation: fadeIn 1.5s ease-in-out;
+      color: #b76e79;
     }
 
     h2 {
@@ -73,16 +141,49 @@
 
       aside {
         width: 100%;
-        height: 60px;
-        background-repeat: repeat-x;
-        background-size: contain;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: auto;
+        padding: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid #e0d6cc;
+      }
+
+      .couple-image {
+        width: 80px;
+        height: 80px;
+        margin: 0.5rem;
+      }
+
+      .countdown {
+        margin: 0.5rem;
+        padding: 0.5rem;
+      }
+
+      .rsvp-button {
+        margin: 0.5rem;
+      }
+
+      main {
+        padding: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <aside></aside>
+  <aside>
+    <div class="decoration"></div>
+    <img src="novia.jpg" alt="Tania" class="couple-image">
+    <img src="novio.jpg" alt="Andrés" class="couple-image">
+    
+    <div class="countdown">
+      <div class="countdown-title">Faltan</div>
+      <div class="countdown-timer" id="countdown">00 días 00:00:00</div>
+    </div>
+    
+    <button class="rsvp-button">Confirmar Asistencia</button>
+  </aside>
 
   <main>
     <h1>Boda Tania & Andrés</h1>
@@ -90,6 +191,31 @@
     <p>Con mucha alegría, queremos invitarte a compartir este momento tan especial con nosotros.</p>
     <p>Será una celebración llena de amor, magia y recuerdos inolvidables. ¡Te esperamos con emoción!</p>
   </main>
+
+  <script>
+    // Cuenta regresiva
+    function updateCountdown() {
+      const weddingDate = new Date('January 3, 2026 12:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').innerHTML = 
+        `${days} días ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // RSVP
+    document.querySelector('.rsvp-button').addEventListener('click', function() {
+      alert('¡Gracias por confirmar tu asistencia! Nos vemos el día de la boda.');
+    });
+  </script>
 </body>
 </html>
 
